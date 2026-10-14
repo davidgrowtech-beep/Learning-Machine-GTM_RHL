@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learn with Trader Gautam Jha</title>
 <meta name="description" content="Join Trader Gautam Jha's free Telegram trading community. Daily market insights, strategies & live trade ideas.">
 <link rel="preconnect" href="https://connect.facebook.net">
 <link rel="dns-prefetch" href="https://www.facebook.com">
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code (PageView ab turant nahi, sirf "qualified visitor" par fire hota hai - neeche script me) -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,31 +19,19 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '2030646684309288');
-fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
 
 <style>
   :root{
-    --gold:#d4af37;
-    --gold-light:#f4e5b2;
-    --dark:#0b0d12;
-    --dark2:#12151c;
-    --card:#161a22;
-    --text:#f2f2f2;
-    --muted:#a9adb8;
-    --green:#25D366;
+    --gold:#d4af37;--gold-light:#f4e5b2;--dark:#0b0d12;--dark2:#12151c;
+    --card:#161a22;--text:#f2f2f2;--muted:#a9adb8;--green:#25D366;--red:#ff5d5d;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{
-    background:var(--dark);
-    color:var(--text);
+    background:var(--dark);color:var(--text);
     font-family:'Segoe UI',Roboto,-apple-system,BlinkMacSystemFont,sans-serif;
-    overflow-x:hidden;
-    scroll-behavior:smooth;
+    overflow-x:hidden;scroll-behavior:smooth;
   }
   body{
     background:
@@ -54,11 +42,7 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   }
   .wrap{max-width:520px;margin:0 auto;padding:0 18px 40px;position:relative;}
 
-  /* Top bar */
-  .topbar{
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    padding:14px 0 10px;
-  }
+  .topbar{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0 10px;}
   .topbar .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
     box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:pulse 1.6s infinite;}
   @keyframes pulse{
@@ -68,18 +52,14 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   }
   .topbar span{font-size:12.5px;color:var(--muted);letter-spacing:.3px;}
 
-  /* Hero */
   .hero{text-align:center;padding:10px 0 6px;animation:fadeUp .7s ease both;}
   .logo-ring{
-    width:132px;height:132px;border-radius:50%;margin:0 auto 16px;
-    padding:4px;
+    width:132px;height:132px;border-radius:50%;margin:0 auto 16px;padding:4px;
     background:conic-gradient(from 0deg, var(--gold), #fff6d8, var(--gold), #7a5c17, var(--gold));
     animation:spin 6s linear infinite;
   }
-  .logo-ring img{
-    width:100%;height:100%;border-radius:50%;object-fit:cover;
-    border:3px solid var(--dark);display:block;background:#222;
-  }
+  .logo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;
+    border:3px solid var(--dark);display:block;background:#222;}
   @keyframes spin{to{transform:rotate(360deg);}}
 
   .badge-verified{
@@ -88,30 +68,36 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
     color:var(--gold-light);font-size:11.5px;font-weight:600;
     padding:5px 12px;border-radius:20px;margin-bottom:12px;letter-spacing:.3px;
   }
-
   h1{
     font-size:26px;line-height:1.28;font-weight:800;
     background:linear-gradient(90deg,#fff, var(--gold-light) 60%, var(--gold));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    margin-bottom:8px;
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px;
   }
   h1 span{display:block;font-size:15px;font-weight:500;color:var(--muted);
     -webkit-text-fill-color:var(--muted);margin-top:6px;}
 
-  .stats-row{
-    display:flex;justify-content:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap;
+  /* ===== Gate form ===== */
+  .gate{
+    background:var(--card);border:1px solid rgba(212,175,55,.35);
+    border-radius:18px;padding:16px 14px 14px;margin:18px 0 8px;
   }
-  .stat{
-    background:var(--card);border:1px solid rgba(255,255,255,.06);
-    border-radius:12px;padding:10px 14px;min-width:88px;text-align:center;
+  .gate-title{font-size:13.5px;font-weight:700;color:var(--gold-light);text-align:center;margin-bottom:12px;}
+  .gate-row{display:flex;gap:10px;}
+  .field{flex:1;min-width:0;}
+  .field.age{flex:1;}
+  .field label{display:block;font-size:11px;color:var(--muted);margin:0 0 5px 3px;}
+  .field input{
+    width:100%;padding:13px 12px;font-size:16px;color:#fff;
+    background:var(--dark2);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;outline:none;
+    transition:border-color .15s;
   }
-  .stat b{display:block;font-size:17px;color:var(--gold-light);}
-  .stat span{font-size:10.5px;color:var(--muted);}
+  .field input:focus{border-color:var(--gold);}
+  .field.bad input{border-color:var(--red);animation:shake .35s;}
+  @keyframes shake{25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .gate-err{display:none;color:var(--red);font-size:12px;text-align:center;margin-top:10px;}
+  .gate-err.show{display:block;}
 
-  /* CTA block */
-  .cta-block{margin:22px 0 10px;position:sticky;bottom:14px;z-index:20;}
-
-  /* ===== Colorful highlighted Telegram button ===== */
+  .cta-block{margin:14px 0 10px;}
   .cta-btn{
     position:relative;overflow:hidden;
     display:flex;align-items:center;justify-content:center;gap:10px;
@@ -145,7 +131,7 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   }
   @keyframes btnShine{0%{left:-80%;}60%,100%{left:140%;}}
   @keyframes btnArrow{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}
-  @media (prefers-reduced-motion:reduce){.cta-btn,.cta-btn::before,.cta-arrow{animation:none;}}
+  @media (prefers-reduced-motion:reduce){.cta-btn,.cta-btn::before,.cta-arrow,.logo-ring{animation:none;}}
 
   .inapp-notice{
     background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.4);
@@ -155,33 +141,30 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   .cta-sub{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px;}
   .cta-sub b{color:var(--gold-light);}
 
-  /* Sections */
-  .section-title{
-    font-size:13px;text-transform:uppercase;letter-spacing:1.2px;
-    color:var(--gold);font-weight:700;margin:30px 0 14px;text-align:center;
-  }
+  .stats-row{display:flex;justify-content:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap;}
+  .stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;
+    padding:10px 14px;min-width:88px;text-align:center;}
+  .stat b{display:block;font-size:17px;color:var(--gold-light);}
+  .stat span{font-size:10.5px;color:var(--muted);}
+
+  .section-title{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;
+    color:var(--gold);font-weight:700;margin:30px 0 14px;text-align:center;}
   .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .feature{
-    background:var(--card);border:1px solid rgba(255,255,255,.06);
-    border-radius:14px;padding:16px 14px;text-align:left;
-  }
+  .feature{background:var(--card);border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;padding:16px 14px;text-align:left;}
   .feature .ic{font-size:22px;margin-bottom:8px;display:block;}
   .feature h3{font-size:13.5px;font-weight:700;margin-bottom:4px;color:#fff;}
   .feature p{font-size:11.5px;color:var(--muted);line-height:1.4;}
 
-  .testi{
-    background:var(--card);border:1px solid rgba(255,255,255,.06);
-    border-radius:14px;padding:16px;margin-bottom:12px;
-  }
+  .testi{background:var(--card);border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;padding:16px;margin-bottom:12px;}
   .testi .stars{color:var(--gold);font-size:13px;margin-bottom:6px;}
   .testi p{font-size:13px;color:#dcdcdc;line-height:1.5;margin-bottom:8px;}
   .testi .name{font-size:11.5px;color:var(--muted);font-weight:600;}
 
-  .countdown-strip{
-    display:flex;align-items:center;justify-content:center;gap:8px;
+  .countdown-strip{display:flex;align-items:center;justify-content:center;gap:8px;
     background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);
-    border-radius:12px;padding:10px;margin:18px 0;font-size:12.5px;color:var(--gold-light);
-  }
+    border-radius:12px;padding:10px;margin:18px 0;font-size:12.5px;color:var(--gold-light);}
 
   footer{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);}
   footer p{font-size:11px;color:#5c6270;line-height:1.6;}
@@ -189,6 +172,30 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
   .fadein{animation:fadeUp .6s ease both;}
+
+  /* ===== Step 2 screen: Telegram me REQUEST dabana hai ===== */
+  .bridge{
+    display:none;position:fixed;inset:0;z-index:100;background:rgba(7,9,13,.97);
+    align-items:center;justify-content:center;padding:22px;overflow-y:auto;
+  }
+  .bridge.show{display:flex;}
+  .bridge-card{
+    width:100%;max-width:420px;text-align:center;background:var(--card);
+    border:1px solid rgba(212,175,55,.4);border-radius:20px;padding:26px 20px;
+  }
+  .bridge-card h2{font-size:21px;font-weight:800;color:var(--gold-light);margin-bottom:6px;}
+  .bridge-card .sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.5;}
+  .steps{text-align:left;margin:0 0 20px;}
+  .step{display:flex;gap:12px;align-items:flex-start;background:var(--dark2);
+    border-radius:12px;padding:12px;margin-bottom:9px;font-size:13.5px;line-height:1.45;}
+  .step i{flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold);color:#111;
+    font-style:normal;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  .step.key{border:1.5px solid var(--green);}
+  .bridge .open-btn{
+    display:block;width:100%;padding:16px;border-radius:14px;background:var(--green);color:#fff;
+    font-size:16.5px;font-weight:800;text-decoration:none;
+  }
+  .bridge .close{margin-top:14px;background:none;border:none;color:#6f7482;font-size:12px;cursor:pointer;}
 </style>
 </head>
 <body>
@@ -197,7 +204,6 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   <div class="topbar"><div class="live-dot"></div><span>247 traders joined in the last 24 hours</span></div>
 
   <div class="hero">
-    <!-- LOGO: file ko isi folder me "logo.jpg" naam se rakhein (compressed, 15KB se kam) -->
     <div class="logo-ring"><img src="logo.jpeg" width="124" height="124" fetchpriority="high" alt="Trader Gautam Jha"></div>
     <div class="badge-verified">✔ Verified Market Educator</div>
     <h1>Learn with Trader Gautam Jha
@@ -205,19 +211,30 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
     </h1>
   </div>
 
-  <!-- Button upar rakha gaya hai taaki bina scroll kiye dikhe -->
   <div id="inAppNotice" class="inapp-notice" style="display:none;">
     ⚠️ You're inside an app browser. For Telegram to open properly, tap <b><span id="inAppMenuHint">⋮</span></b> above and choose <b>"Open in Browser"</b>, then tap Join again.
   </div>
 
-  <div class="cta-block">
-    <a class="cta-btn" id="joinBtn" href="https://t.me/+MIAf21pym4w0NWY1" rel="noopener">
-      <span class="cta-free">FREE</span>
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
-      <span class="cta-txt">Join Free on Telegram</span>
-      <span class="cta-arrow">➜</span>
-    </a>
-    <p class="cta-sub">👆 Tap to join <b>instantly</b> — no signup, no cost</p>
+  <!-- STEP 1: naam + age bharo, tabhi button kaam karega -->
+  <div class="gate" id="gate">
+    <div class="gate-title">Enter your age to get free access</div>
+    <div class="gate-row">
+      <div class="field age" id="fAge">
+        <label for="inAge">Your Age</label>
+        <input id="inAge" type="tel" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="Enter your age (18+)">
+      </div>
+    </div>
+    <div class="gate-err" id="gateErr">Please enter a valid age (18+) to continue.</div>
+
+    <div class="cta-block">
+      <a class="cta-btn" id="joinBtn" href="https://t.me/+HiNJhOO-U-5kZTU1" rel="noopener">
+        <span class="cta-free">FREE</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
+        <span class="cta-txt">Join Free on Telegram</span>
+        <span class="cta-arrow">➜</span>
+      </a>
+      <p class="cta-sub">👆 Enter your age &amp; tap to join <b>instantly</b> — no cost</p>
+    </div>
   </div>
 
   <div class="stats-row fadein">
@@ -240,14 +257,14 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   <div class="testi fadein"><div class="stars">★★★★★</div><p>Genuinely helped me understand how to read the market instead of blindly following calls.</p><div class="name">— Rohit S., Member</div></div>
   <div class="testi fadein"><div class="stars">★★★★★</div><p>Consistent, clear and honest updates every single day. Highly recommend joining.</p><div class="name">— Priya K., Member</div></div>
 
-  <div class="cta-block" style="position:static;">
-    <a class="cta-btn" id="joinBtn2" href="https://t.me/+MIAf21pym4w0NWY1" rel="noopener">
+  <div class="cta-block">
+    <a class="cta-btn" id="joinBtn2" href="https://t.me/+HiNJhOO-U-5kZTU1" rel="noopener">
       <span class="cta-free">FREE</span>
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
       <span class="cta-txt">Join Trader Gautam Jha Now</span>
       <span class="cta-arrow">➜</span>
     </a>
-    <p class="cta-sub">🔥 Join <b>50,000+</b> traders learning for free</p>
+    <p class="cta-sub">🔥 Join thousands of traders learning for free</p>
   </div>
 
   <footer>
@@ -256,37 +273,78 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   </footer>
 </div>
 
+<!-- STEP 2: Telegram khulne se pehle yaad dilata hai ki REQUEST dabana zaroori hai -->
+<div class="bridge" id="bridge" role="dialog" aria-live="polite">
+  <div class="bridge-card">
+    <h2>Almost done! ✅</h2>
+    <p class="sub">Telegram is opening. One last tap there and you're in.</p>
+    <div class="steps">
+      <div class="step"><i>1</i><div>Telegram will open the Trader Gautam Jha channel.</div></div>
+      <div class="step key"><i>2</i><div><b>Tap "Request to Join" / "Join Channel"</b> at the bottom of the screen.</div></div>
+      <div class="step"><i>3</i><div>You'll be approved and start getting daily market updates.</div></div>
+    </div>
+    <a class="open-btn" id="openTg" href="https://t.me/+HiNJhOO-U-5kZTU1" rel="noopener">Telegram not opened? Tap here</a>
+    <button class="close" id="bridgeClose" type="button">Close</button>
+  </div>
+</div>
+
 <script>
 (function(){
-  var INVITE = "MIAf21pym4w0NWY1";                  // sirf yahin invite code badalna hai
+  var INVITE = "HiNJhOO-U-5kZTU1";                  // sirf yahin invite code badalna hai
   var TELEGRAM_LINK = "https://t.me/+" + INVITE;
-  var MIN_DWELL_MS = 2000;                           // kam se kam itna visible time (2 sec)
+  var MIN_DWELL_MS = 1500;                           // Lead ke liye kam se kam visible time
+  var QPV_INTERACT_MS = 3000;                        // qualified PageView: interaction + 3s
+  var QPV_FOCUS_MS = 8000;                           // ya bina interaction ke 8s focused
+  var NAV_DELAY_MS = 400;                            // Lead pixel bhejne ka thoda time, phir redirect
   var DEDUP_KEY = "gautamjha_lead_sent";
   var DEVICE_KEY = "gautamjha_lead_device";
+  var PV_KEY = "gautamjha_qpv_sent";
   var DEVICE_COOLDOWN_MS = 12 * 60 * 60 * 1000;
 
-  // ---- Dwell time: sirf tab count hota hai jab page screen par visible ho ----
-  var visibleMs = 0, lastTick = Date.now();
-  setInterval(function(){
-    var n = Date.now();
-    if (document.visibilityState === "visible") visibleMs += Math.min(n - lastTick, 500);
-    lastTick = n;
-  }, 250);
-
-  // ---- Asli press detect (script se bheje gaye synthetic events trusted nahi hote) ----
-  var pressedAt = 0, lastClickAt = 0;
-  function markPress(e){ if (e.isTrusted) pressedAt = Date.now(); }
+  var ua = navigator.userAgent || "";
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isInApp = /FBAN|FBAV|FB_IAB|Instagram|Line\//i.test(ua);
+  var targetHref = TELEGRAM_LINK;
 
   function looksAutomated(){
     try {
       if (navigator.webdriver) return true;
-      var ua = navigator.userAgent || "";
       if (/HeadlessChrome|PhantomJS|SlimerJS|Selenium|puppeteer|playwright|bot|crawler|spider/i.test(ua)) return true;
       if (window.callPhantom || window._phantom || window.__nightmare) return true;
       if (navigator.languages && navigator.languages.length === 0) return true;
     } catch(e){}
     return false;
   }
+
+  // ---- Visible time + real interaction track ----
+  var visibleMs = 0, focusedMs = 0, lastTick = Date.now(), interacted = false, pvSent = false;
+  try { if (sessionStorage.getItem(PV_KEY) === "1") pvSent = true; } catch(e){}
+
+  function onInteract(e){ if (e.isTrusted) interacted = true; }
+  ["touchstart","pointerdown","scroll","keydown","input"].forEach(function(t){
+    window.addEventListener(t, onInteract, {passive:true, capture:true});
+  });
+
+  // ---- Qualified PageView: sirf asli insaan ke liye ----
+  setInterval(function(){
+    var n = Date.now(), d = Math.min(n - lastTick, 500);
+    lastTick = n;
+    if (document.visibilityState === "visible") {
+      visibleMs += d;
+      if (!document.hasFocus || document.hasFocus()) focusedMs += d;
+    }
+    if (!pvSent && !looksAutomated() &&
+        ((interacted && visibleMs >= QPV_INTERACT_MS) || focusedMs >= QPV_FOCUS_MS)) {
+      pvSent = true;
+      try { sessionStorage.setItem(PV_KEY, "1"); } catch(e){}
+      if (typeof fbq === "function") fbq('track', 'PageView');
+    }
+  }, 250);
+
+  // ---- Asli press detect ----
+  var pressedAt = 0, lastClickAt = 0;
+  function markPress(e){ if (e.isTrusted) pressedAt = Date.now(); }
 
   function sentThisSession(){ try { return sessionStorage.getItem(DEDUP_KEY) === "1"; } catch(e){ return false; } }
   function sentFromDevice(){
@@ -299,20 +357,48 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
     try { sessionStorage.setItem(DEDUP_KEY, "1"); } catch(e){}
     try { localStorage.setItem(DEVICE_KEY, String(Date.now())); } catch(e){}
   }
-
   function trackLead(){
-    if (typeof fbq === "function") {
-      fbq('track', 'Lead', { content_name: 'Learn with Trader Gautam Jha', content_category: 'Telegram Join' });
-    }
+    if (typeof fbq === "function") fbq('track', 'Lead', { content_name: 'Learn with Trader Gautam Jha', content_category: 'Telegram Join' });
   }
   function trackFiltered(reason){
-    // Sirf diagnostics ke liye: Events Manager me dikhega kitne clicks kyun filter hue
     if (typeof fbq === "function") fbq('trackCustom', 'FilteredClick', { reason: reason });
   }
 
-  // Redirect KABHI block ya delay nahi hota. Sirf Lead pixel filter hota hai.
+  // ---- Form gate ----
+  var inAge = document.getElementById("inAge");
+  var fAge = document.getElementById("fAge");
+  var gateErr = document.getElementById("gateErr");
+
+  inAge.addEventListener("input", function(){ inAge.value = inAge.value.replace(/\D/g, "").slice(0, 2); });
+  inAge.addEventListener("input", function(){
+    fAge.classList.remove("bad"); gateErr.classList.remove("show");
+  });
+
+  function validate(){
+    var a = parseInt(inAge.value, 10);
+    var ageOk = !isNaN(a) && a >= 18 && a <= 80;
+    fAge.classList.toggle("bad", !ageOk);
+    gateErr.classList.toggle("show", !ageOk);
+    if (!ageOk) inAge.focus();
+    return ageOk;
+  }
+
+  // ---- Step 2 screen ----
+  var bridge = document.getElementById("bridge");
+  document.getElementById("bridgeClose").addEventListener("click", function(){ bridge.classList.remove("show"); });
+
+  function go(){ window.location.href = targetHref; }
+
   function handleJoin(e){
-    if (e.isTrusted === false) { e.preventDefault(); return; }
+    e.preventDefault();
+    if (e.isTrusted === false) return;
+
+    // Age bhare bina Telegram nahi khulega, Lead bhi nahi jayega
+    if (!validate()) {
+      document.getElementById("gate").scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+
     var now = Date.now(), reason = "";
     if (looksAutomated()) reason = "automated";
     else if (sentThisSession() || sentFromDevice()) reason = "duplicate";
@@ -321,10 +407,14 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
     else if (visibleMs < MIN_DWELL_MS) reason = "low_dwell";
     lastClickAt = now;
 
-    if (reason) { trackFiltered(reason); return; }
-    markSent();
-    trackLead();
-    // no preventDefault, no setTimeout: native href navigation chalta rahe
+    if (reason) { trackFiltered(reason); }
+    else { markSent(); trackLead(); }
+
+    document.getElementById("openTg").setAttribute("href", targetHref);
+    bridge.classList.add("show");
+
+    // Lead pixel ko bhejne ka thoda time, phir Telegram
+    setTimeout(go, NAV_DELAY_MS);
   }
 
   var btns = [document.getElementById("joinBtn"), document.getElementById("joinBtn2")];
@@ -336,11 +426,6 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
   });
 
   // ---- In-app browser (Facebook/Instagram) ----
-  var ua = navigator.userAgent || "";
-  var isAndroid = /Android/i.test(ua);
-  var isIOS = /iPhone|iPad|iPod/i.test(ua);
-  var isInApp = /FBAN|FBAV|FB_IAB|Instagram|Line\//i.test(ua);
-
   if (isInApp) {
     var notice = document.getElementById("inAppNotice");
     if (notice) {
@@ -348,12 +433,9 @@ src="https://www.facebook.com/tr?id=2030646684309288&ev=PageView&noscript=1"
       notice.style.display = "block";
     }
     if (isAndroid) {
-      // Telegram app seedha khulega (SAHI invite code ke saath);
-      // app na ho to normal t.me link par fallback
-      var intentLink = "intent://join?invite=" + INVITE +
+      targetHref = "intent://join?invite=" + INVITE +
         "#Intent;scheme=tg;package=org.telegram.messenger;" +
         "S.browser_fallback_url=" + encodeURIComponent(TELEGRAM_LINK) + ";end";
-      btns.forEach(function(b){ if (b) b.setAttribute("href", intentLink); });
     }
   }
 })();
